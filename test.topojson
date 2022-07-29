@@ -1,0 +1,15 @@
+{
+  "type": "Topology",
+  "objects": {
+    "example": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "properties": {"prop0": "曀田"},
+          "coordinates": [-3.1883, 55.9533]
+        }
+      ]
+    }
+  }
+}
