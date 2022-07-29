@@ -3,6 +3,9 @@
     "features": [
         {
             "type": "Feature",
+            "properties": {
+                "name": "曀田"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -10,7 +13,7 @@
                     -3.1883
                 ]
             },
-            "title": "曀田"
+            "title": "曀田，標題顯示點解錯誤？"
         }
     ]
 }
