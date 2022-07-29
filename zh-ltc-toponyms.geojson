@@ -20,6 +20,46 @@
                 "type": "Point",
                 "coordinates": [-122.3321, 47.6062]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "星莪"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [103.8198, 1.3521]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "悉禰"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [151.2093, -33.8688]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "裊約"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-74.0060, 40.7128]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "渦珄"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-77.0369, 38.9072]
+            }
         }
     ]
 }
