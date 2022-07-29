@@ -8,12 +8,8 @@
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [
-                    -3.1883,
-                    55.9533
-                ]
-            },
-            "title": "曀田，標題顯示點解錯誤？"
+                "coordinates": [-3.1883, 55.9533]
+            }
         },
         {
             "type": "Feature",
@@ -22,12 +18,8 @@
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [
-                    -122.3321,
-                    47.6062
-                ]
-            },
-            "title": "肆遏，標題顯示點解錯誤？"
+                "coordinates": [-122.3321, 47.6062]
+            }
         }
     ]
 }
