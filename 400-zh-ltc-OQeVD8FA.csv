@@ -7,7 +7,7 @@ V,覃 7V,,添 aV,,咸 QaV,,盐A eaV,,盐B QeaV,,,
 V,,,,,,,侵A eV,,侵B QeV,,,
 Z,唐开 RZ,唐合 FRZ,,,庚二开 QLZ,庚二合 QFLZ,清A开 eLZ,清A合 vLZ,庚三开 QeLZ,庚三合 QvLZ,阳开 eRZ,阳合 vRZ
 Z,,,青开 aZ,青合 FaZ,耕开 QaZ,耕合 QFaZ,,,,,,
-Z,登开 iZ,登合 FiZ,,,,,,,蒸 QeZ,蒸合 QvZ,,
+Z,登开 iZ,登合 FiZ,,,,,蒸 eZ,,蒸B QeZ,蒸合 QvZ,,
 Z,东一 FZ,,,,,,,,,,东三 eFZ,
 Z,冬 oZ,,,,江 QoZ,,,,,,锺 eoZ,
 O,歌 7,戈一合 F7,,,麻二开 QR,麻二合 QFR,麻三开 eR,,,,戈三开 e7,戈三合 v7
@@ -18,4 +18,4 @@ e,咍 ie,灰 oe,齐开 ae,齐合 Fae,皆开 Qae,皆合 QFae,,,,,微开 de,微合
 e,泰开 RQ,泰合 FRQ,,,夬开 QRQ,夬合 QFRQ,祭A开 eaQ,祭A合 vaQ,祭B开 QeaQ,祭B合 QvaQ,废开 eiQ,废合 voQ
 F,豪 7F,,,,肴 QRF,,,,,,,
 F,,,萧 aF,,,,宵A eaF,,宵B QeaF,,,
-F,侯 F,,,,,,幽 eF,,,,尤 dF,
+F,侯 F,,,,,,幽 eF,,幽B QeF,,尤 dF,
