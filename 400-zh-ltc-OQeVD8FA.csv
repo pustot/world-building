@@ -1,28 +1,21 @@
 ﻿等呼,一开,一合,四开,四合,二开,二合,三A开,三A合,三B开,三B合,三C开,三C合
-H,寒 RH,桓 FRH,,,删开 QRH,删合 QFRH,,,,,元开 ?eiH,元合 ?eiH
-H,,,先开 aH,先合 FaH,山开 QaH,山合 QFaH,仙A开 ?eaH,仙A合 ?eaH,仙B开 ?eaH,仙B合 ?eaH,,
-H,痕 iH,魂 oH,,,,,,,,,欣 yH,文 FH
-H,,,,,,,真A ?eH,,真B开 ?eH,真B合 ?eH,,
-H,,,,,,,,谆A ?eH,臻 ?eH,,,
-V,谈 RV,,,,衔 QRV,,,,,,严 ?iV,凡 ?oV
-V,,,添 aV,,咸 QaV,,盐A ?eaV,,盐B ?eaV,,,
-V,覃 7V,,,,,,,,,,,
-V,,,,,,,侵A ?eV,,侵B ?eV,,,
-Z,唐开 7Z,唐合 F7Z,,,庚二开 QRZ,庚二合 QFRZ,,,,,阳开 ?e7Z,阳合 ?v7Z
-Z,,,青开 aZ,青合 FaZ,耕开 QaZ,耕合 QFaZ,清A开 ?eRZ,清A合 ?eRZ,庚三开 ?eRZ,庚三合 ?eRZ,,
-Z,登开 iZ,登合 oZ,,,,,,,,,,
-Z,,,,,,,,,蒸 ?yZ,蒸合 ?yZ,,
-Z,冬 oZ,,,,,,,,,,东三 ?eFZ,
-Z,东一 FZ,,,,江 QoZ,,,,,,锺 ?eoZ,
-O,歌 R,戈一合 FR,,,麻二开 QR,麻二合 QFR,麻三开 ?eR,,,,戈三开 ?eR,戈三合 ?vR
-O,,,,,佳开 Qa,佳合 QFa,支A开 ?ea,支A合 ?ea,支B开 ?ea,支B合 ?ea,,
-O,模 o,,,,,,,,,,鱼 yi,虞 Fo
-e,,,,,,,脂A开 ?e,脂A合 ?e,脂B开 ?e,脂B合 ?e,,
-e,,,,,,,,,,,之 y,
-e,咍 ie,灰 oe,齐开 ae,齐合 Fae,皆开 Qae,皆合 QFae,,,,,,
-e,泰开 RQ,泰合 FRQ,,,夬开 QRQ,夬合 QFRQ,祭A开 ?eiQ,祭A合 ?eiQ,祭B开 ?eiQ,祭B合 ?eiQ,,
-e,,,,,,,,,,,废开 ?iQ,废合 ?FiQ
-e,,,,,,,,,,,微开 ye,微合 Fe
+H,寒 RH,桓 FRH,,,删开 QRH,删合 QFRH,,,,,元开 eiH,元合 voH
+H,,,先开 aH,先合 FaH,山开 QaH,山合 QFaH,仙A开 eaH,仙A合 vaH,仙B开 QeaH,仙B合 QvaH,,
+H,痕 iH,魂 oH,,,,,真A eH,谆A vH,真B开&臻 QeH,真B合 QvH,欣 dH,文 FH
+V,谈 RV,,,,衔 QRV,,,,,,严 eiV,凡 voV
+V,覃 7V,,添 aV,,咸 QaV,,盐A eaV,,盐B QeaV,,,
+V,,,,,,,侵A eV,,侵B QeV,,,
+Z,唐开 RZ,唐合 FRZ,,,庚二开 QLZ,庚二合 QFLZ,清A开 eLZ,清A合 vLZ,庚三开 QeLZ,庚三合 QvLZ,阳开 eRZ,阳合 vRZ
+Z,,,青开 aZ,青合 FaZ,耕开 QaZ,耕合 QFaZ,,,,,,
+Z,登开 iZ,登合 FiZ,,,,,,,蒸 QeZ,蒸合 QvZ,,
+Z,东一 FZ,,,,,,,,,,东三 eFZ,
+Z,冬 oZ,,,,江 QoZ,,,,,,锺 eoZ,
+O,歌 7,戈一合 F7,,,麻二开 QR,麻二合 QFR,麻三开 eR,,,,戈三开 e7,戈三合 v7
+O,,,,,佳开 Qa,佳合 QFa,支A开 ea,支A合 va,支B开 Qea,支B合 Qva,,
+O,模 o,,,,,,,,,,鱼 ei,虞 vo
+e,,,,,,,脂A开 e,脂A合 v,脂B开 Qe,脂B合 Qv,之 d,
+e,咍 ie,灰 oe,齐开 ae,齐合 Fae,皆开 Qae,皆合 QFae,,,,,微开 de,微合 Fe
+e,泰开 RQ,泰合 FRQ,,,夬开 QRQ,夬合 QFRQ,祭A开 eaQ,祭A合 vaQ,祭B开 QeaQ,祭B合 QvaQ,废开 eiQ,废合 voQ
 F,豪 7F,,,,肴 QRF,,,,,,,
-F,,,萧 aF,,,,宵A ?eaF,,宵B ?eaF,,,
-F,侯 F,,,,,,幽 yF,,,,尤 ?eF,
+F,,,萧 aF,,,,宵A eaF,,宵B QeaF,,,
+F,侯 F,,,,,,幽 eF,,,,尤 dF,
