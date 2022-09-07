@@ -8,6 +8,7 @@
 if (!音韻地位) return [];
 
 const is = (...x) => 音韻地位.屬於(...x);
+const when = (...x) => 音韻地位.判斷(...x);
 
 // 音韻地位 = Qieyun.適配分析體系('ytenx')(音韻地位);
 
@@ -48,7 +49,7 @@ function 聲母規則() {
     case '曉': return 'X';
     case '匣': return 'X8';
     case '云': return '';
-    case '以': return 'e';
+    case '以': return 'E';
     case '來': return 'S';
     case '日': return 'HM';
     default: throw new Error('無聲母規則');
@@ -59,10 +60,10 @@ function 韻母規則() {
   // 通攝
   if (is('東韻 一等')) return 'FZ';
   if (is('東韻 三等')) return 'eFZ';
-  if (is('冬韻')) return 'oZ';
-  if (is('鍾韻')) return 'eoZ';
+  if (is('冬韻')) return '7Z';
+  if (is('鍾韻')) return 'e7Z';
   // 江攝
-  if (is('江韻')) return 'QoZ';
+  if (is('江韻')) return 'Q7Z';
   // 止攝
   if (is('支韻 合口')) return is('重紐B類') ? 'Qva' : 'va';  // 未标AB的话？
   if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？
@@ -117,7 +118,7 @@ function 韻母規則() {
   if (is('蕭韻')) return 'aF';
   if (is('宵韻')) return is('重紐B類') ? 'QeaF' : 'eaF';
   if (is('肴韻')) return 'QRF';
-  if (is('豪韻')) return '7F';
+  if (is('豪韻')) return 'RF';
   // 果攝
   if (is('歌韻 一等 開口')) return '7';
   if (is('歌韻 一等')) return 'F7';
@@ -146,7 +147,7 @@ function 韻母規則() {
   // 曾攝
   if (is('蒸韻 合口')) return 'QvZ';
   if (is('蒸韻')) return is('重紐B類') ? 'QeZ' : 'eZ';  // TODO: 按声母分
-  if (is('登韻 合口')) return 'FiZ';
+  if (is('登韻 合口')) return 'oZ';
   if (is('登韻')) return 'iZ';
   // 流攝
   if (is('尤韻')) return 'dF';
@@ -155,7 +156,7 @@ function 韻母規則() {
   // 深攝
   if (is('侵韻')) return is('重紐B類') ? 'QeV' : 'eV';
   // 咸攝
-  if (is('覃韻')) return '7V';
+  if (is('覃韻')) return 'iV';
   if (is('談韻')) return 'RV';
   if (is('鹽韻')) return is('重紐B類') ? 'QeaV' : 'eaV';
   if (is('添韻')) return 'aV';
@@ -219,4 +220,35 @@ if (is('入聲')) {
 //   隔音符號 = ''; // 如 2237 地小韻 diih
 // }
 
-return 聲母 + 韻母 + 聲調;
+// from unt, modified
+function get介音() {
+  const A = ''; //
+  const B = 'Q';
+  const C = '';
+  let 等類介音 = when([
+    ['四等', A],
+    ['二等', B],
+    ['一等', C],
+
+    ['銳音', [ // 銳音包含以母
+      ['端精組', A], // 加入端組是爲了包含爹小韻
+      ['', ''],
+    ]],
+    ['重紐A類', A],
+    ['重紐B類', B],
+    ['云母 支脂祭眞臻仙宵麻庚清蒸幽侵鹽韻', B], // TODO: qieyun-js 更新後簡化
+    ['庚韻', B],
+    ['幽韻 幫組', B],
+    ['蒸韻 非 開口', B],
+    ['麻清幽韻', A],
+    ['', C],
+  ]);
+  // let 合口介音 = is`(合口 或 虞韻) 非 (幫組 或 云母)` ? 'w' : ''; // TODO: qieyun-js 更新後刪去虞韻
+  return 等類介音; //+ 合口介音;
+}
+
+let 介音 = get介音();
+
+if (介音 == 'Q' && 韻母.startsWith('Q')) 介音 = '';
+
+return 聲母 + 介音 + 韻母 + 聲調;
