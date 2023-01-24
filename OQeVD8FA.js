@@ -19,15 +19,15 @@ function 聲母規則() {
     case '並': return 'b8';
     case '明': return 'V';
     case '端': return 'D';
-    case '透': return 'm';
+    case '透': return 'L';
     case '定': return 'D8';
     case '泥': return 'H';
     case '知': return 'Dl';
-    case '徹': return 'ml';
+    case '徹': return 'Ll';
     case '澄': return 'D8l';
     case '孃': return 'Hl';
     case '精': return '9';
-    case '清': return 'c';
+    case '清': return '7';
     case '從': return '98';
     case '心': return 'C';
     case '邪': return 'd';
@@ -58,12 +58,12 @@ function 聲母規則() {
 
 function 韻母規則() {
   // 通攝
-  if (is('東韻 一等')) return 'FZ';
-  if (is('東韻 三等')) return 'eFZ';
-  if (is('冬韻')) return '7Z';
-  if (is('鍾韻')) return 'e7Z';
+  if (is('東韻 一等')) return 'nZ';
+  if (is('東韻 三等')) return 'enZ';
+  if (is('冬韻')) return 'cZ';
+  if (is('鍾韻')) return 'ecZ';
   // 江攝
-  if (is('江韻')) return 'Q7Z';
+  if (is('江韻')) return 'QcZ';
   // 止攝
   if (is('支韻 合口')) return is('重紐B類') ? 'Qva' : 'va';  // 未标AB的话？
   if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？
@@ -71,24 +71,24 @@ function 韻母規則() {
   if (is('脂韻')) return is('重紐B類') ? 'Qe' : 'e';  // 未标AB的话？
   if (is('之韻')) return 'd';
   if (is('微韻 開口')) return 'de';
-  if (is('微韻')) return 'Fe';
+  if (is('微韻')) return 'ne';
   // 遇攝
   if (is('魚韻')) return 'ei';
   if (is('虞韻')) return 'vo';
   if (is('模韻')) return 'o';
   // 蟹攝
-  if (is('齊韻 合口')) return 'Fae';
+  if (is('齊韻 合口')) return 'nae';
   if (is('齊韻')) return 'ae';
   if (is('祭韻 合口')) return is('重紐B類') ? 'QvaQ' : 'vaQ';
   if (is('祭韻')) return is('重紐B類') ? 'QeaQ' : 'eaQ';
-  if (is('泰韻 合口')) return 'FRQ';
-  if (is('泰韻')) return 'RQ';
-  if (is('佳韻 合口')) return 'QFa';
+  if (is('泰韻 合口')) return 'nrQ';
+  if (is('泰韻')) return 'rQ';
+  if (is('佳韻 合口')) return 'Qna';
   if (is('佳韻')) return 'Qa';
-  if (is('皆韻 合口')) return 'QFae';
+  if (is('皆韻 合口')) return 'Qnae';
   if (is('皆韻')) return 'Qae';
-  if (is('夬韻 合口')) return 'QFRQ';
-  if (is('夬韻')) return 'QRQ';
+  if (is('夬韻 合口')) return 'QnrQ';
+  if (is('夬韻')) return 'QrQ';
   if (is('咍韻')) return 'ie';
   if (is('灰韻')) return 'oe';
   if (is('廢韻 開口')) return 'eiQ';
@@ -98,51 +98,51 @@ function 韻母規則() {
   if (is('眞韻')) return is('重紐B類') ? 'QeH' : 'eH';
   if (is('臻韻')) return 'QeH';
   if (is('欣韻')) return 'dH';
-  if (is('文韻')) return 'FH';
+  if (is('文韻')) return 'nH';
   if (is('元韻 開口')) return 'eiH';
   if (is('元韻')) return 'voH';
   if (is('痕韻')) return 'iH';
   if (is('魂韻')) return 'oH';
   // 山攝
-  if (is('寒韻 開口')) return 'RH';
-  if (is('寒韻')) return 'FRH';
-  if (is('刪韻 合口')) return 'QFRH';
-  if (is('刪韻')) return 'QRH';
-  if (is('山韻 合口')) return 'QFaH';
+  if (is('寒韻 開口')) return 'rH';
+  if (is('寒韻')) return 'nrH';
+  if (is('刪韻 合口')) return 'QnrH';
+  if (is('刪韻')) return 'QrH';
+  if (is('山韻 合口')) return 'QnaH';
   if (is('山韻')) return 'QaH';
   if (is('仙韻 合口')) return is('重紐B類') ? 'QvaH' : 'vaH';
   if (is('仙韻')) return is('重紐B類') ? 'QeaH' : 'eaH';
-  if (is('先韻 合口')) return 'FaH';
+  if (is('先韻 合口')) return 'naH';
   if (is('先韻')) return 'aH';
   // 效攝
-  if (is('蕭韻')) return 'aF';
-  if (is('宵韻')) return is('重紐B類') ? 'QeaF' : 'eaF';
-  if (is('肴韻')) return 'QRF';
-  if (is('豪韻')) return 'RF';
+  if (is('蕭韻')) return 'an';
+  if (is('宵韻')) return is('重紐B類') ? 'Qean' : 'ean';
+  if (is('肴韻')) return 'Qrn';
+  if (is('豪韻')) return 'rn';
   // 果攝
-  if (is('歌韻 一等 開口')) return '7';
-  if (is('歌韻 一等')) return 'F7';
-  if (is('歌韻 三等 開口')) return 'e7';
-  if (is('歌韻 三等')) return 'v7';
+  if (is('歌韻 一等 開口')) return 'c';
+  if (is('歌韻 一等')) return 'nc';
+  if (is('歌韻 三等 開口')) return 'ec';
+  if (is('歌韻 三等')) return 'vc';
   // 假攝
-  if (is('麻韻 二等 合口')) return 'QFR';
-  if (is('麻韻 二等')) return 'QR';
-  if (is('麻韻 三等')) return 'eR';
+  if (is('麻韻 二等 合口')) return 'Qnr';
+  if (is('麻韻 二等')) return 'Qr';
+  if (is('麻韻 三等')) return 'er';
   // 宕攝
-  if (is('陽韻 開口')) return 'eRZ';
-  if (is('陽韻')) return 'vRZ';
-  if (is('唐韻 合口')) return 'FRZ';
-  if (is('唐韻')) return 'RZ';
+  if (is('陽韻 開口')) return 'erZ';
+  if (is('陽韻')) return 'vrZ';
+  if (is('唐韻 合口')) return 'nrZ';
+  if (is('唐韻')) return 'rZ';
   // 梗攝
-  if (is('庚韻 二等 合口')) return 'QFLZ';
-  if (is('庚韻 二等')) return 'QLZ';
-  if (is('庚韻 三等 合口')) return 'QvLZ';
-  if (is('庚韻 三等')) return 'QeLZ';
-  if (is('耕韻 合口')) return 'QFaZ';
+  if (is('庚韻 二等 合口')) return 'QnmZ';
+  if (is('庚韻 二等')) return 'QmZ';
+  if (is('庚韻 三等 合口')) return 'QvmZ';
+  if (is('庚韻 三等')) return 'QemZ';
+  if (is('耕韻 合口')) return 'QnaZ';
   if (is('耕韻')) return 'QaZ';
-  if (is('清韻 合口')) return 'vLZ'; // is('重紐A類') ? 'vLZ' : 'QvLZ';
-  if (is('清韻')) return 'eLZ'; // is('重紐A類') ? 'eLZ' : 'QeLZ';
-  if (is('青韻 合口')) return 'FaZ';
+  if (is('清韻 合口')) return 'vmZ'; // is('重紐A類') ? 'vLZ' : 'QvLZ';
+  if (is('清韻')) return 'emZ'; // is('重紐A類') ? 'eLZ' : 'QeLZ';
+  if (is('青韻 合口')) return 'naZ';
   if (is('青韻')) return 'aZ';
   // 曾攝
   if (is('蒸韻 合口')) return 'QvZ';
@@ -150,18 +150,18 @@ function 韻母規則() {
   if (is('登韻 合口')) return 'oZ';
   if (is('登韻')) return 'iZ';
   // 流攝
-  if (is('尤韻')) return 'dF';
-  if (is('侯韻')) return 'F';
-  if (is('幽韻')) return  is('重紐B類') ? 'QeF' : 'eF';
+  if (is('尤韻')) return 'dn';
+  if (is('侯韻')) return 'n';
+  if (is('幽韻')) return  is('重紐B類') ? 'Qen' : 'en';
   // 深攝
   if (is('侵韻')) return is('重紐B類') ? 'QeV' : 'eV';
   // 咸攝
   if (is('覃韻')) return 'iV';
-  if (is('談韻')) return 'RV';
+  if (is('談韻')) return 'rV';
   if (is('鹽韻')) return is('重紐B類') ? 'QeaV' : 'eaV';
   if (is('添韻')) return 'aV';
   if (is('咸韻')) return 'QaV';
-  if (is('銜韻')) return 'QRV';
+  if (is('銜韻')) return 'QrV';
   if (is('嚴韻')) return 'eiV';
   if (is('凡韻')) return 'voV';
   throw new Error('無韻母規則');
@@ -181,7 +181,7 @@ let 聲調 = 聲調規則();
 
 if (is('入聲')) {
   if (韻母.endsWith('V')) 韻母 = `${韻母.slice(0, -1)}h`;
-  else if (韻母.endsWith('H')) 韻母 = `${韻母.slice(0, -1)}m`;
+  else if (韻母.endsWith('H')) 韻母 = `${韻母.slice(0, -1)}L`;
   else if (韻母.endsWith('Z')) 韻母 = `${韻母.slice(0, -1)}A`;
 }
 
