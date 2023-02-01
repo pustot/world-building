@@ -60,10 +60,10 @@ function 韻母規則() {
   // 通攝
   if (is('東韻 一等')) return 'nZ';
   if (is('東韻 三等')) return 'enZ';
-  if (is('冬韻')) return 'cZ';
-  if (is('鍾韻')) return 'ecZ';
+  if (is('冬韻')) return 'mZ';
+  if (is('鍾韻')) return 'emZ';
   // 江攝
-  if (is('江韻')) return 'QcZ';
+  if (is('江韻')) return 'QmZ';
   // 止攝
   if (is('支韻 合口')) return is('重紐B類') ? 'Qva' : 'va';  // 未标AB的话？
   if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？
@@ -120,10 +120,10 @@ function 韻母規則() {
   if (is('肴韻')) return 'Qrn';
   if (is('豪韻')) return 'rn';
   // 果攝
-  if (is('歌韻 一等 開口')) return 'c';
-  if (is('歌韻 一等')) return 'nc';
-  if (is('歌韻 三等 開口')) return 'ec';
-  if (is('歌韻 三等')) return 'vc';
+  if (is('歌韻 一等 開口')) return 'm';
+  if (is('歌韻 一等')) return 'nm';
+  if (is('歌韻 三等 開口')) return 'em';
+  if (is('歌韻 三等')) return 'vm';
   // 假攝
   if (is('麻韻 二等 合口')) return 'Qnr';
   if (is('麻韻 二等')) return 'Qr';
@@ -134,14 +134,14 @@ function 韻母規則() {
   if (is('唐韻 合口')) return 'nrZ';
   if (is('唐韻')) return 'rZ';
   // 梗攝
-  if (is('庚韻 二等 合口')) return 'QnmZ';
-  if (is('庚韻 二等')) return 'QmZ';
-  if (is('庚韻 三等 合口')) return 'QvmZ';
-  if (is('庚韻 三等')) return 'QemZ';
+  if (is('庚韻 二等 合口')) return 'QncZ';
+  if (is('庚韻 二等')) return 'QcZ';
+  if (is('庚韻 三等 合口')) return 'QvcZ';
+  if (is('庚韻 三等')) return 'QecZ';
   if (is('耕韻 合口')) return 'QnaZ';
   if (is('耕韻')) return 'QaZ';
-  if (is('清韻 合口')) return 'vmZ'; // is('重紐A類') ? 'vLZ' : 'QvLZ';
-  if (is('清韻')) return 'emZ'; // is('重紐A類') ? 'eLZ' : 'QeLZ';
+  if (is('清韻 合口')) return 'vcZ'; // is('重紐A類') ? 'vLZ' : 'QvLZ';
+  if (is('清韻')) return 'ecZ'; // is('重紐A類') ? 'eLZ' : 'QeLZ';
   if (is('青韻 合口')) return 'naZ';
   if (is('青韻')) return 'aZ';
   // 曾攝
