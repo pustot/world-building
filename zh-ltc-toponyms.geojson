@@ -4,11 +4,51 @@
         {
             "type": "Feature",
             "properties": {
+                "name": "謙桥"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [0.1313, 52.1951]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
                 "name": "曀田"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [-3.1883, 55.9533]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "崘屯"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.1276, 51.5072]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "南闞"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.4049, 50.9105]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "拔柮"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.5879, 51.4545]
             }
         },
         {
