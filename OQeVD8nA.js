@@ -81,9 +81,9 @@ function 韻母規則() {
   if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？ // Q deleted
   if (is('脂韻 合口')) return is('重紐B類') ? 'Qv' : 'v';  // 未标AB的话？ // Q deleted
   if (is('脂韻')) return is('重紐B類') ? 'Qe' : 'e';  // 未标AB的话？ // Q deleted
-  if (is('之韻')) return 'd';
-  if (is('微韻 開口')) return 'de';
-  if (is('微韻')) return 'nde';
+  if (is('之韻')) return 'y';
+  if (is('微韻 開口')) return 'ye';
+  if (is('微韻')) return 'nye';
   // 遇攝 o
   if (is('魚韻')) return 'ei';
   if (is('虞韻')) return 'vo';
@@ -109,8 +109,8 @@ function 韻母規則() {
   if (is('眞韻 合口')) return is('重紐B類') ? 'QvH' : 'vH'; // Q deleted
   if (is('眞韻')) return is('重紐B類') ? 'QeH' : 'eH'; // Q deleted
   if (is('臻韻')) return 'QeH'; // Q deleted
-  if (is('欣韻')) return 'dH';
-  if (is('文韻')) return 'ndH';
+  if (is('欣韻')) return 'yH';
+  if (is('文韻')) return 'nyH';
   if (is('元韻 開口')) return 'eiH';
   if (is('元韻')) return 'voH';
   if (is('痕韻')) return 'iH';
@@ -162,7 +162,7 @@ function 韻母規則() {
   if (is('登韻 合口')) return 'niZ';
   if (is('登韻')) return 'iZ';
   // 流攝 n
-  if (is('尤韻')) return 'dn';
+  if (is('尤韻')) return 'yn';
   if (is('侯韻')) return 'n';
   if (is('幽韻')) return  is('重紐B類') ? 'Qen' : 'en'; // Q deleted
   // 深攝 eV
