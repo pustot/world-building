@@ -1,20 +1,8 @@
-/* 丌通语汉字音读 - 个人朗读音 - 绝呼音
+/* 丌通语汉字音读
  *
  * Han character pronunciation in Ttomniese
- * 
- * 老版本存放在 -old.js，但打算直接用切韵拼音的字面音和切韵通俗拟音替代，用作汉字音读之切音。
- * 切音，顾名思义源自切韵音，是中古汉语的代表。
- * 另开此实验性的个人朗读音，因为严格按照切韵拟音太难读了。估计跟什么近古方言都不像。
- * 暂称为绝呼音。因为绝系语文，或许因为其后起文化以及庞大规模，就喜欢引用以及简化。
- * （或许把切韵音野鸡着读就成了本方案了吧。。。）
- * 基本思路是
- * - 声母和韵尾尽量保留切音（但其实我不太会发浊音）；
- * - 介音保留 e n 但不保留我个人不太会发的 y u（写出以二等和B类为代表的 Q 但它可能省略或读为 e 或仿古）；
- * - 韵腹尽量取几个现代变体里最常见的（很可能导致合并）；
- * - 声调基本只有平上去入，暂定采用近似菏泽话
- * 不断调整中！
  *
- * @author TwaqNgu
+ * @author Pusto
  */
 
 if (!音韻地位) return [];
@@ -69,111 +57,111 @@ function 聲母規則() {
 }
 
 function 韻母規則() {
-  // 通攝 o Z
+  // 通攝
   if (is('東韻 一等')) return 'nZ';
   if (is('東韻 三等')) return 'enZ';
-  if (is('冬韻')) return 'oZ';
-  if (is('鍾韻')) return 'eoZ';
-  // 江攝 m Z
-  if (is('江韻')) return 'QmZ'; // Q deleted
-  // 止攝 e
-  if (is('支韻 合口')) return is('重紐B類') ? 'Qva' : 'va';  // 未标AB的话？ // Q deleted
-  if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？ // Q deleted
-  if (is('脂韻 合口')) return is('重紐B類') ? 'Qv' : 'v';  // 未标AB的话？ // Q deleted
-  if (is('脂韻')) return is('重紐B類') ? 'Qe' : 'e';  // 未标AB的话？ // Q deleted
+  if (is('冬韻')) return 'mZ';
+  if (is('鍾韻')) return 'emZ';
+  // 江攝
+  if (is('江韻')) return 'QmZ';
+  // 止攝
+  if (is('支韻 合口')) return is('重紐B類') ? 'Qva' : 'va';  // 未标AB的话？
+  if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？
+  if (is('脂韻 合口')) return is('重紐B類') ? 'Qv' : 'v';  // 未标AB的话？
+  if (is('脂韻')) return is('重紐B類') ? 'Qe' : 'e';  // 未标AB的话？
   if (is('之韻')) return 'd';
   if (is('微韻 開口')) return 'de';
-  if (is('微韻')) return 'nde';
-  // 遇攝 o
+  if (is('微韻')) return 'ne';
+  // 遇攝
   if (is('魚韻')) return 'ei';
   if (is('虞韻')) return 'vo';
-  if (is('模韻')) return 'no';
-  // 蟹攝 re
+  if (is('模韻')) return 'o';
+  // 蟹攝
   if (is('齊韻 合口')) return 'nae';
   if (is('齊韻')) return 'ae';
-  if (is('祭韻 合口')) return is('重紐B類') ? 'QvaQ' : 'vaQ'; // Q deleted
-  if (is('祭韻')) return is('重紐B類') ? 'QeaQ' : 'eaQ'; // Q deleted
+  if (is('祭韻 合口')) return is('重紐B類') ? 'QvaQ' : 'vaQ';
+  if (is('祭韻')) return is('重紐B類') ? 'QeaQ' : 'eaQ';
   if (is('泰韻 合口')) return 'nrQ';
   if (is('泰韻')) return 'rQ';
-  if (is('佳韻 合口')) return 'Qna'; // Q deleted
-  if (is('佳韻')) return 'Qa'; // Q deleted
-  if (is('皆韻 合口')) return 'Qnae'; // Q deleted
-  if (is('皆韻')) return 'Qae'; // Q deleted
-  if (is('夬韻 合口')) return 'QnrQ'; // Q deleted
-  if (is('夬韻')) return 'QrQ'; // Q deleted
+  if (is('佳韻 合口')) return 'Qna';
+  if (is('佳韻')) return 'Qa';
+  if (is('皆韻 合口')) return 'Qnae';
+  if (is('皆韻')) return 'Qae';
+  if (is('夬韻 合口')) return 'QnrQ';
+  if (is('夬韻')) return 'QrQ';
   if (is('咍韻')) return 'ie';
-  if (is('灰韻')) return 'nie';
+  if (is('灰韻')) return 'oe';
   if (is('廢韻 開口')) return 'eiQ';
   if (is('廢韻')) return 'voQ';
-  // 臻攝 eH
-  if (is('眞韻 合口')) return is('重紐B類') ? 'QvH' : 'vH'; // Q deleted
-  if (is('眞韻')) return is('重紐B類') ? 'QeH' : 'eH'; // Q deleted
-  if (is('臻韻')) return 'QeH'; // Q deleted
+  // 臻攝
+  if (is('眞韻 合口')) return is('重紐B類') ? 'QvH' : 'vH';
+  if (is('眞韻')) return is('重紐B類') ? 'QeH' : 'eH';
+  if (is('臻韻')) return 'QeH';
   if (is('欣韻')) return 'dH';
-  if (is('文韻')) return 'ndH';
+  if (is('文韻')) return 'nH';
   if (is('元韻 開口')) return 'eiH';
   if (is('元韻')) return 'voH';
   if (is('痕韻')) return 'iH';
-  if (is('魂韻')) return 'niH';
-  // 山攝 rH
+  if (is('魂韻')) return 'oH';
+  // 山攝
   if (is('寒韻 開口')) return 'rH';
   if (is('寒韻')) return 'nrH';
-  if (is('刪韻 合口')) return 'QnrH'; // Q deleted
-  if (is('刪韻')) return 'QrH'; // Q deleted
-  if (is('山韻 合口')) return 'QnaH'; // Q deleted
-  if (is('山韻')) return 'QaH'; // Q deleted
-  if (is('仙韻 合口')) return is('重紐B類') ? 'QvaH' : 'vaH'; // Q deleted
-  if (is('仙韻')) return is('重紐B類') ? 'QeaH' : 'eaH'; // Q deleted
+  if (is('刪韻 合口')) return 'QnrH';
+  if (is('刪韻')) return 'QrH';
+  if (is('山韻 合口')) return 'QnaH';
+  if (is('山韻')) return 'QaH';
+  if (is('仙韻 合口')) return is('重紐B類') ? 'QvaH' : 'vaH';
+  if (is('仙韻')) return is('重紐B類') ? 'QeaH' : 'eaH';
   if (is('先韻 合口')) return 'naH';
   if (is('先韻')) return 'aH';
-  // 效攝 rn
+  // 效攝
   if (is('蕭韻')) return 'an';
-  if (is('宵韻')) return is('重紐B類') ? 'Qean' : 'ean'; // Q deleted
-  if (is('肴韻')) return 'Qrn'; // Q deleted
+  if (is('宵韻')) return is('重紐B類') ? 'Qean' : 'ean';
+  if (is('肴韻')) return 'Qrn';
   if (is('豪韻')) return 'rn';
-  // 果攝 rp
-  if (is('歌韻 一等 開口')) return 'rp';
-  if (is('歌韻 一等')) return 'nrp';
-  if (is('歌韻 三等 開口')) return 'erp';
-  if (is('歌韻 三等')) return 'vrp';
-  // 假攝 r
-  if (is('麻韻 二等 合口')) return 'Qnr'; // Q deleted
-  if (is('麻韻 二等')) return 'Qr'; // Q deleted
+  // 果攝
+  if (is('歌韻 一等 開口')) return 'm';
+  if (is('歌韻 一等')) return 'nm';
+  if (is('歌韻 三等 開口')) return 'em';
+  if (is('歌韻 三等')) return 'vm';
+  // 假攝
+  if (is('麻韻 二等 合口')) return 'Qnr';
+  if (is('麻韻 二等')) return 'Qr';
   if (is('麻韻 三等')) return 'er';
-  // 宕攝 aZ
+  // 宕攝
   if (is('陽韻 開口')) return 'erZ';
   if (is('陽韻')) return 'vrZ';
   if (is('唐韻 合口')) return 'nrZ';
   if (is('唐韻')) return 'rZ';
-  // 梗攝 eZ
-  if (is('庚韻 二等 合口')) return 'QncZ'; // Q deleted
-  if (is('庚韻 二等')) return 'QcZ'; // Q deleted
-  if (is('庚韻 三等 合口')) return 'QvcZ'; // Q deleted
-  if (is('庚韻 三等')) return 'QecZ'; // Q deleted
-  if (is('耕韻 合口')) return 'QnaZ'; // Q deleted
-  if (is('耕韻')) return 'QaZ'; // Q deleted
+  // 梗攝
+  if (is('庚韻 二等 合口')) return 'QncZ';
+  if (is('庚韻 二等')) return 'QcZ';
+  if (is('庚韻 三等 合口')) return 'QvcZ';
+  if (is('庚韻 三等')) return 'QecZ';
+  if (is('耕韻 合口')) return 'QnaZ';
+  if (is('耕韻')) return 'QaZ';
   if (is('清韻 合口')) return 'vcZ'; // is('重紐A類') ? 'vLZ' : 'QvLZ';
   if (is('清韻')) return 'ecZ'; // is('重紐A類') ? 'eLZ' : 'QeLZ';
   if (is('青韻 合口')) return 'naZ';
   if (is('青韻')) return 'aZ';
-  // 曾攝 iZ
-  if (is('蒸韻 合口')) return 'QvZ'; // Q deleted
-  if (is('蒸韻')) return is('重紐B類') ? 'QeZ' : 'eZ';  // TODO: 按声母分 // Q deleted
-  if (is('登韻 合口')) return 'niZ';
+  // 曾攝
+  if (is('蒸韻 合口')) return 'QvZ';
+  if (is('蒸韻')) return is('重紐B類') ? 'QeZ' : 'eZ';  // TODO: 按声母分
+  if (is('登韻 合口')) return 'oZ';
   if (is('登韻')) return 'iZ';
-  // 流攝 n
+  // 流攝
   if (is('尤韻')) return 'dn';
   if (is('侯韻')) return 'n';
-  if (is('幽韻')) return  is('重紐B類') ? 'Qen' : 'en'; // Q deleted
-  // 深攝 eV
-  if (is('侵韻')) return is('重紐B類') ? 'QeV' : 'eV'; // Q deleted
-  // 咸攝 rV
+  if (is('幽韻')) return  is('重紐B類') ? 'Qen' : 'en';
+  // 深攝
+  if (is('侵韻')) return is('重紐B類') ? 'QeV' : 'eV';
+  // 咸攝
   if (is('覃韻')) return 'iV';
   if (is('談韻')) return 'rV';
-  if (is('鹽韻')) return is('重紐B類') ? 'QeaV' : 'eaV'; // Q deleted
+  if (is('鹽韻')) return is('重紐B類') ? 'QeaV' : 'eaV';
   if (is('添韻')) return 'aV';
-  if (is('咸韻')) return 'QaV'; // Q deleted
-  if (is('銜韻')) return 'QrV'; // Q deleted
+  if (is('咸韻')) return 'QaV';
+  if (is('銜韻')) return 'QrV';
   if (is('嚴韻')) return 'eiV';
   if (is('凡韻')) return 'voV';
   throw new Error('無韻母規則');
