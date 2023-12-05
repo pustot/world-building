@@ -284,4 +284,5 @@ function get羅馬化(result) {
   }
 }
 
+if (!音韻地位) return get選項列表();
 return is羅馬化? get羅馬化(result) : result;
