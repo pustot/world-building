@@ -22,6 +22,12 @@ if (!音韻地位) return [];
 const is = (...x) => 音韻地位.屬於(...x);
 const when = (...x) => 音韻地位.判斷(...x);
 
+const is羅馬化 = 選項.羅馬化 ?? false;
+
+function get選項列表() {
+  return [['羅馬化', is羅馬化]]
+}
+
 // 音韻地位 = Qieyun.適配分析體系('ytenx')(音韻地位);
 
 function 聲母規則() {
@@ -263,4 +269,19 @@ let 介音 = get介音();
 
 if (介音 == 'Q' && 韻母.startsWith('Q')) 介音 = '';
 
-return 聲母 + 介音 + 韻母 + 聲調;
+let result =  聲母 + 介音 + 韻母 + 聲調;
+
+function get羅馬化(result) {
+  const map = new Map([
+    ["a", "e"],
+    ["A", "k"],
+    ["B", "tç"]
+  ]);
+  let roma = "";
+  for (let ch in result) {
+    if (map.has(ch)) roma += map[ch];
+    else roma += ch;
+  }
+}
+
+return is羅馬化? get羅馬化(result) : result;
