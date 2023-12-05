@@ -17,16 +17,12 @@
  * @author TwaqNgu
  */
 
-if (!音韻地位) return [];
-
 const is = (...x) => 音韻地位.屬於(...x);
 const when = (...x) => 音韻地位.判斷(...x);
 
 const is羅馬化 = 選項.羅馬化 ?? false;
 
-function get選項列表() {
-  return [['羅馬化', is羅馬化]]
-}
+if (!音韻地位) return [['羅馬化', is羅馬化]];
 
 // 音韻地位 = Qieyun.適配分析體系('ytenx')(音韻地位);
 
@@ -273,16 +269,25 @@ let result =  聲母 + 介音 + 韻母 + 聲調;
 
 function get羅馬化(result) {
   const map = new Map([
-    ["a", "e"],
-    ["A", "k"],
-    ["B", "tç"]
+    ["a", "e"], ["b", "b"], ["c", "ä"], ["d", "z"], ["e", "i"],
+    ["f", "?"], ["g", "?"], ["h", "p"], ["i", "ë"], ["j", "?"],
+    ["k", "ŕ"], ["l", "ł"], ["m", "å"], ["n", "u"], ["o", "o"],
+    ["p", "ħ"], ["q", "_"], ["r", "a"], ["s", "ö"], ["t", "ę"],
+    ["u", "ÿ"], ["v", "ü"], ["w", "û"], ["x", "h"], ["y", "y"],
+    ["z", "æ"],
+    ["A", "k"], ["B", "tç"], ["C", "s"], ["D", "d"], ["E", "j"],
+    ["F", "v"], ["G", "dš"], ["H", "n"], ["I", "?"], ["J", "tš"],
+    ["K", "r"], ["L", "t"], ["M", "j"], ["N", "f"], ["O", "'"],
+    ["P", "?"], ["Q", "ř"], ["R", "?"], ["S", "l"], ["T", "dç"],
+    ["U", "?"], ["V", "m"], ["W", "š"], ["X", "x"], ["Y", "g"],
+    ["Z", "ň"], ["6", "ç"], ["7", "ts"], ["8", "ħ"], ["9", "ds"]
   ]);
   let roma = "";
-  for (let ch in result) {
-    if (map.has(ch)) roma += map[ch];
+  for (let ch of result) {
+    if (map.has(ch)) roma += map.get(ch);
     else roma += ch;
   }
+  return roma;
 }
 
-if (!音韻地位) return get選項列表();
 return is羅馬化? get羅馬化(result) : result;
