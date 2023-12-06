@@ -290,6 +290,37 @@ if (介音 == 'Q' && 韻母.startsWith('Q')) 介音 = '';
 
 let result =  聲母 + 介音 + 韻母 + 聲調;
 
+// change tone numbers (2, 3) to tone symbols (acute, grave)
+function add聲調符號(romanizedStr) {
+  const vowels = ['a', 'ä', 'å', 'e', 'ë', 'o', 'ï', 'ü', 'u', 'i']; // 按优先级排序
+  const sharpToneMark = "\u0301";  // 锐音符（声调2），"\u00B4" 不結合
+  const dullToneMark = "\u0300";   // 钝音符（声调3），"\u0060" 不結合
+
+  // 选择正确的声调符号
+  let toneMark = '';
+  if (romanizedStr.slice(-1) === "2") {
+      toneMark = sharpToneMark;
+      romanizedStr = romanizedStr.slice(0, -1);
+  } else if (romanizedStr.slice(-1) === "3") {
+      toneMark = dullToneMark;
+      romanizedStr = romanizedStr.slice(0, -1);
+  }
+
+  // 如果无需添加声调符号，直接返回原字符串
+  if (!toneMark) {
+      return romanizedStr;
+  }
+
+  // 查找并在主要元音上添加声调符号
+  for (let vowel of vowels) {
+      if (romanizedStr.includes(vowel)) {
+          // 替换第一个出现的主要元音
+          return romanizedStr.replace(vowel, vowel + toneMark);
+      }
+  }
+  return romanizedStr; // 如果没有找到元音，则返回原始字符串
+}
+
 function get羅馬化(result) {
   const map = new Map([
     ["a", "e"], ["b", "b"], ["c", "ä"], ["d", "z"], ["e", "i"],
@@ -310,7 +341,7 @@ function get羅馬化(result) {
     if (map.has(ch)) roma += map.get(ch);
     else roma += ch;
   }
-  return roma;
+  return is聲調符號? add聲調符號(roma) : roma;
 }
 
 return is羅馬化? get羅馬化(result) : result;
