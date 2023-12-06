@@ -43,6 +43,7 @@ const is = (...x) => 音韻地位.屬於(...x);
 const when = (...x) => 音韻地位.判斷(...x);
 
 const is羅馬化 = 選項.羅馬化 ?? false;
+const is聲調符號 = 選項.聲調符號 ?? false;
 
 if (!音韻地位) return [['羅馬化', is羅馬化], ['聲調符號', is聲調符號]];
 
