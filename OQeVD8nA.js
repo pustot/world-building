@@ -47,8 +47,9 @@ const when = (...x) => 音韻地位.判斷(...x);
 const is羅馬化 = 選項.羅馬化 ?? false;
 const is聲調符號 = 選項.聲調符號 ?? false;
 const isIPA風格 = 選項.IPA風格 ?? false;
+const is首字母大寫 = 選項.首字母大寫 ?? false;
 
-if (!音韻地位) return [['羅馬化', is羅馬化], ['聲調符號', is聲調符號], ['IPA風格', isIPA風格]];
+if (!音韻地位) return [['羅馬化', is羅馬化], ['聲調符號', is聲調符號], ['IPA風格', isIPA風格], ['首字母大寫', is首字母大寫]];
 
 // 音韻地位 = Qieyun.適配分析體系('ytenx')(音韻地位);
 
@@ -404,6 +405,18 @@ function 羅馬toIPA風格(roma) {
 
 }
 
+function capitalizeFirstLetter(str) {
+  if (str.length === 0) return str;
+
+  // 如果字符串以特殊字符开头（比如 '），则大写其后的第一个字母
+  if (str[0] === "'") {
+      return str[0] + str.charAt(1).toUpperCase() + str.slice(2);
+  }
+
+  // 否则，直接大写第一个字母
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function get羅馬化(result) {
   const map = new Map([
     ["a", "e"], ["b", "b"], ["c", "ä"], ["d", "z"], ["e", "i"],
@@ -425,6 +438,7 @@ function get羅馬化(result) {
     else roma += ch;
   }
   if (isIPA風格) roma = 羅馬toIPA風格(roma);
+  if (is首字母大寫) roma = capitalizeFirstLetter(roma);
   return is聲調符號? add聲調符號(roma) : roma;
 }
 
