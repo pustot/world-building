@@ -4,6 +4,8 @@
  * 
  * 'řim dħuk
  * 
+ * ʔɹim d̬uk
+ * 
  * 老版本存放在 -old.js，但打算直接用切韵拼音的字面音和切韵通俗拟音替代，用作汉字音读之切音。
  * 切音，顾名思义源自切韵音，是中古汉语的代表。
  * 另开此实验性的个人朗读音，原則是犧牲擬音之嚴密，而主推幫助記憶音韻地位以及方便朗讀。
@@ -44,8 +46,9 @@ const when = (...x) => 音韻地位.判斷(...x);
 
 const is羅馬化 = 選項.羅馬化 ?? false;
 const is聲調符號 = 選項.聲調符號 ?? false;
+const isIPA風格 = 選項.IPA風格 ?? false;
 
-if (!音韻地位) return [['羅馬化', is羅馬化], ['聲調符號', is聲調符號]];
+if (!音韻地位) return [['羅馬化', is羅馬化], ['聲調符號', is聲調符號], ['IPA風格', isIPA風格]];
 
 // 音韻地位 = Qieyun.適配分析體系('ytenx')(音韻地位);
 
@@ -292,9 +295,9 @@ let result =  聲母 + 介音 + 韻母 + 聲調;
 
 // change tone numbers (2, 3) to tone symbols (acute, grave)
 function add聲調符號(romanizedStr) {
-  const vowels = ['a', 'ä', 'å', 'e', 'ë', 'o', 'ï', 'ü', 'u', 'i']; // 按优先级排序
-  const sharpToneMark = "\u0301";  // 锐音符（声调2），"\u00B4" 不結合
-  const dullToneMark = "\u0300";   // 钝音符（声调3），"\u0060" 不結合
+  const vowels = ['a', 'ɑ', 'ä', 'ɛ', 'å', 'ɔ', 'e', 'ë', 'ə', 'o', 'ï', 'ɨ', 'ü', 'y', 'u', 'i']; // 按优先级排序
+  const sharpToneMark = "\u0301";  // 锐音符（声调2）。"\u00B4" 不結合。
+  const dullToneMark = "\u0300";   // 钝音符（声调3）。"\u0060" 不結合
 
   // 选择正确的声调符号
   let toneMark = '';
@@ -321,6 +324,86 @@ function add聲調符號(romanizedStr) {
   return romanizedStr; // 如果没有找到元音，则返回原始字符串
 }
 
+function 羅馬toIPA風格(roma) {
+  // 多合字母
+  roma = roma.replace('aħ', 'ɑ');
+  roma = roma.replace('nj', 'ɲ');
+
+  // 單體字母
+  roma = roma.replace("'", 'ʔ');
+  roma = roma.replace('ç', 'ɕ');
+  roma = roma.replace('š', 'ʂ');
+  roma = roma.replace('ň', 'ŋ');
+  roma = roma.replace('ň', 'ŋ'); // 詞尾可能還有一個
+  roma = roma.replace('ř', 'ɹ');
+  roma = roma.replace('ä', 'ɛ');
+  roma = roma.replace('ë', 'ə');
+  roma = roma.replace('ï', 'ɨ');
+  roma = roma.replace('ü', 'y');
+  roma = roma.replace('å', 'ɔ');
+
+  // xħ 是在這裏轉成ɣ還是在下一步轉成x̬呢？
+  roma = roma.replace('xħ', 'ɣ');
+  
+  // 清濁送
+  // 送气清音及其IPA送气标志
+  const aspiratedConsonants = ['p', 'k', 'tɕ', 'ts', 'tʂ', 't'];
+  const aspiratedMark = "\u02B0"; // IPA送气标志
+
+  // 不送气清音及其IPA清化标志
+  const unaspiratedConsonants = ['b', 'd', 'g', 'dɕ', 'ds', 'dʂ'];
+  const unaspiratedMark = "\u0325"; // IPA清化标志
+
+  // 濁音及其IPA濁化标志
+  const voicedConsonants = ['bħ', 'dħ', 'għ', 'dɕħ', 'dsħ', 'dʂħ', 'xħ', 'ɕħ', 'ʂħ'];
+  const voicedMark = "\u032C"; // IPA濁化标志
+
+  let is清濁已標 = false;
+
+  // 处理濁音
+  voicedConsonants.forEach(consonant => {
+    if (!is清濁已標 && roma.startsWith(consonant)) {
+        let newConsonant = consonant.slice(0, -1)[0] + voicedMark + consonant.slice(0, -1).slice(1);
+        roma = roma.replace(consonant, newConsonant);
+        is清濁已標 = true;
+    }
+  });
+
+  if (!is清濁已標) {
+
+    // 处理送气清音
+    aspiratedConsonants.forEach(consonant => {
+        if (!is清濁已標 && roma.startsWith(consonant)) {
+          roma = roma.replace(consonant, consonant + aspiratedMark);
+          is清濁已標 = true;
+        }
+    });
+
+    // 处理不送气清音
+    unaspiratedConsonants.forEach(consonant => {
+        if (!is清濁已標 && roma.startsWith(consonant)) {
+            let newConsonant = consonant[0] + unaspiratedMark + consonant.slice(1);
+            roma = roma.replace(consonant, newConsonant);
+            is清濁已標 = true;
+        }
+    });
+
+  }
+
+  const retroMap = new Map([["d", "ɖ"], ["t", "ʈ"], ["n", "ɳ"]]);
+  if (roma.includes('ł')) {
+    roma = roma.replace('ł', '');
+    ['d', 't', 'n'].forEach(consonant => {
+      if (roma.startsWith(consonant)) {
+        roma = roma.replace(consonant, retroMap.get(consonant));
+      }
+    });
+  }
+
+  return roma;
+
+}
+
 function get羅馬化(result) {
   const map = new Map([
     ["a", "e"], ["b", "b"], ["c", "ä"], ["d", "z"], ["e", "i"],
@@ -341,6 +424,7 @@ function get羅馬化(result) {
     if (map.has(ch)) roma += map.get(ch);
     else roma += ch;
   }
+  if (isIPA風格) roma = 羅馬toIPA風格(roma);
   return is聲調符號? add聲調符號(roma) : roma;
 }
 
