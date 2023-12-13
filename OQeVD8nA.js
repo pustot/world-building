@@ -2,9 +2,12 @@
  *
  * Han character pronunciation in Ttomniese
  * 
- * 'řim dħuk
+ * 'ûim dğuk
  * 
- * ʔɹim d̬uk
+ * qyim douk
+ * 
+ * 经过一番思想升级，我决定直接读切韵拼音。现有自拟声韵方案作废。
+ * TODO: 调整为仅供从切韵拼音绝电字化、罗马化及IPA化。
  * 
  * 老版本存放在 -old.js，但打算直接用切韵拼音的字面音和切韵通俗拟音替代，用作汉字音读之切音。
  * 切音，顾名思义源自切韵音，是中古汉语的代表。
@@ -99,112 +102,112 @@ function 聲母規則() {
 
 function 韻母規則() {
   // 通攝 n Z tuň
-  if (is('東韻 一等')) return 'nZ';
-  if (is('東韻 三等')) return 'enZ';
-  if (is('冬韻')) return 'oZ';
-  if (is('鍾韻')) return 'eoZ';
+  if (is('東韻 一等')) return 'PnZ'; // oung
+  if (is('東韻 三等')) return 'nZ'; // ung
+  if (is('冬韻')) return 'oZ'; // ong
+  if (is('鍾韻')) return 'noZ'; // uong
   // 江攝 m Z gřåň
-  if (is('江韻')) return 'oQZ'; // Q deleted
+  if (is('江韻')) return 'oQZ'; // oeung
   // 止攝 e dçï2
-  if (is('支韻 合口')) return is('重紐B類') ? 'Qva' : 'va';  // 未标AB的话？ // Q deleted
-  if (is('支韻')) return is('重紐B類') ? 'Qea' : 'ea';  // 未标AB的话？ // Q deleted
-  if (is('脂韻 合口')) return is('重紐B類') ? 'Qv' : 'v';  // 未标AB的话？ // Q deleted
-  if (is('脂韻')) return is('重紐B類') ? 'Qe' : 'e';  // 未标AB的话？ // Q deleted
-  if (is('之韻')) return 'y';
-  if (is('微韻 開口')) return 'yE';
-  if (is('微韻')) return 'nyE';
+  if (is('支韻 合口')) return is('重紐B類') ? 'na' : 'fea';  // ue/wie （何不 'fQea' : 'fea'） // 未标AB的话？
+  if (is('支韻')) return is('重紐B類') ? 'wa' : 'ea';  // ye/ie （何不 'Qea' : 'ea'） // 未标AB的话？
+  if (is('脂韻 合口')) return is('重紐B類') ? 'fQe' : 'fe';  // ui/wi 未标AB的话？
+  if (is('脂韻')) return is('重紐B類') ? 'Qe' : 'e';  // yi/i 未标AB的话？肌
+  if (is('之韻')) return 'w'; // y
+  if (is('微韻 開口')) return 'we'; // yj 机
+  if (is('微韻')) return 'ne'; // uj
   // 遇攝 o ňüo3
-  if (is('魚韻')) return 'ei';
-  if (is('虞韻')) return 'vo';
-  if (is('模韻')) return 'o';
+  if (is('魚韻')) return 'wi'; // yo
+  if (is('虞韻')) return 'no'; // uo
+  if (is('模韻')) return 'o'; // o
   // 蟹攝 re xħře2
-  if (is('齊韻 合口')) return 'naE';
-  if (is('齊韻')) return 'aE';
-  if (is('祭韻 合口')) return is('重紐B類') ? 'QvaE' : 'vaE'; // Q deleted
-  if (is('祭韻')) return is('重紐B類') ? 'QeaE' : 'eaE'; // Q deleted
-  if (is('泰韻 合口')) return 'nrE';
-  if (is('泰韻')) return 'rE';
-  if (is('佳韻 合口')) return 'naQ'; // Q deleted
-  if (is('佳韻')) return 'aQ'; // Q deleted
-  if (is('皆韻 合口')) return 'naQE'; // Q deleted
-  if (is('皆韻')) return 'aQE'; // Q deleted
-  if (is('夬韻 合口')) return 'nrQE'; // Q deleted
-  if (is('夬韻')) return 'rQE'; // Q deleted
-  if (is('咍韻')) return 'iE';
-  if (is('灰韻')) return 'niE';
-  if (is('廢韻 開口')) return 'eiE';
-  if (is('廢韻')) return 'voE';
+  if (is('齊韻 合口')) return 'fae'; // wej
+  if (is('齊韻')) return 'ae'; // ej
+  if (is('祭韻 合口')) return is('重紐B類') ? 'fQeae' : 'feae'; // uej/wiej
+  if (is('祭韻')) return is('重紐B類') ? 'Qeae' : 'eae'; // yej/iej
+  if (is('泰韻 合口')) return 'nre'; // waj
+  if (is('泰韻')) return 're'; // aj ; rpe
+  if (is('佳韻 合口')) return 'faQ'; // wee
+  if (is('佳韻')) return 'aQ'; // ee
+  if (is('皆韻 合口')) return 'faQe'; // weej
+  if (is('皆韻')) return 'aQe'; // eej
+  if (is('夬韻 合口')) return 'frQe'; // waej
+  if (is('夬韻')) return 'rQe'; // aej
+  if (is('咍韻')) return 'ie'; // eoj
+  if (is('灰韻')) return 'fie'; // oj
+  if (is('廢韻 開口')) return 'wie'; // yoj
+  if (is('廢韻')) return 'nie'; // uoj
   // 臻攝 eH dšřin
-  if (is('眞韻 合口')) return is('重紐B類') ? 'QvH' : 'vH'; // Q deleted
-  if (is('眞韻')) return is('重紐B類') ? 'QeH' : 'eH'; // Q deleted
-  if (is('臻韻')) return 'QeH'; // Q deleted // 臻真是同一音位的条件变体。臻韵只限于庄组开口后
-  if (is('欣韻')) return 'yH'; // 又叫殷
-  if (is('文韻')) return 'nyH';
-  if (is('元韻 開口')) return 'eiH';
-  if (is('元韻')) return 'voH';
-  if (is('痕韻')) return 'iH';
-  if (is('魂韻')) return 'niH';
+  if (is('眞韻 合口')) return is('重紐B類') ? 'fQeH' : 'feH'; // uin/win
+  if (is('眞韻')) return is('重紐B類') ? 'QeH' : 'eH'; // yin/in
+  if (is('臻韻')) return 'QeH'; // yin // 臻真是同一音位的条件变体。臻韵只限于庄组开口后
+  if (is('欣韻')) return 'wH'; // yn 又叫殷
+  if (is('文韻')) return 'nH'; // un
+  if (is('元韻 開口')) return 'wiH'; // yon
+  if (is('元韻')) return 'niH'; // uon
+  if (is('痕韻')) return 'iH'; // eon
+  if (is('魂韻')) return 'fiH'; // on
   // 山攝 rH šřen
-  if (is('寒韻 開口')) return 'rH';
-  if (is('寒韻')) return 'nrH';
-  if (is('刪韻 合口')) return 'nrQH'; // Q deleted
-  if (is('刪韻')) return 'rQH'; // Q deleted
-  if (is('山韻 合口')) return 'naQH'; // Q deleted
-  if (is('山韻')) return 'aQH'; // Q deleted
-  if (is('仙韻 合口')) return is('重紐B類') ? 'QvaH' : 'vaH'; // Q deleted
-  if (is('仙韻')) return is('重紐B類') ? 'QeaH' : 'eaH'; // Q deleted
-  if (is('先韻 合口')) return 'naH';
-  if (is('先韻')) return 'aH';
+  if (is('寒韻 開口')) return 'rH'; // an ; rpH
+  if (is('寒韻')) return 'frH'; // wan 又叫桓韵
+  if (is('刪韻 合口')) return 'frQH'; // waen
+  if (is('刪韻')) return 'rQH'; // aen
+  if (is('山韻 合口')) return 'faQH'; // ween
+  if (is('山韻')) return 'aQH'; // een
+  if (is('仙韻 合口')) return is('重紐B類') ? 'fQeaH' : 'feaH'; // uen/wien
+  if (is('仙韻')) return is('重紐B類') ? 'QeaH' : 'eaH'; // yen/ien
+  if (is('先韻 合口')) return 'faH'; // wen
+  if (is('先韻')) return 'aH'; // en
   // 效攝 rn xħřau3
-  if (is('蕭韻')) return 'af';
-  if (is('宵韻')) return is('重紐B類') ? 'Qeaf' : 'eaf'; // Q deleted
-  if (is('肴韻')) return 'rQf'; // Q deleted
-  if (is('豪韻')) return 'rf';
+  if (is('豪韻')) return 'rn'; // aw ; rpn
+  if (is('肴韻')) return 'rQn'; // aew
+  if (is('宵韻')) return is('重紐B類') ? 'wan' : 'ean'; // yew/iew
+  if (is('蕭韻')) return 'an'; // ew
   // 果攝 rp guaħ2
-  if (is('歌韻 一等 開口')) return 'rp';
-  if (is('歌韻 一等')) return 'nrp';
-  if (is('歌韻 三等 開口')) return 'erp';
-  if (is('歌韻 三等')) return 'vrp';
+  if (is('歌韻 一等 開口')) return 'r'; // a ; rp
+  if (is('歌韻 一等')) return 'fr'; // wa
+  if (is('歌韻 三等 開口')) return 'wr'; // ya
+  if (is('歌韻 三等')) return 'nr'; // ua
   // 假攝 r gřa2
-  if (is('麻韻 二等 合口')) return 'nrQ'; // Q deleted
-  if (is('麻韻 二等')) return 'rQ'; // Q deleted
-  if (is('麻韻 三等')) return 'er';
+  if (is('麻韻 二等 合口')) return 'frQ'; // wae
+  if (is('麻韻 二等')) return 'rQ'; // ae
+  if (is('麻韻 三等')) return 'er'; // iae
   // 宕攝 r Z dħaň3
-  if (is('陽韻 開口')) return 'erpZ';
-  if (is('陽韻')) return 'vrpZ';
-  if (is('唐韻 合口')) return 'nrpZ';
-  if (is('唐韻')) return 'rpZ';
+  if (is('陽韻 開口')) return 'wrpZ'; // yang
+  if (is('陽韻')) return 'nrpZ'; // uang
+  if (is('唐韻 合口')) return 'frpZ'; // wang
+  if (is('唐韻')) return 'rpZ'; // ang
   // 梗攝 a Z gřäň2
-  if (is('庚韻 二等 合口')) return 'nrQZ'; // Q deleted
-  if (is('庚韻 二等')) return 'rQZ'; // Q deleted
-  if (is('庚韻 三等 合口')) return 'QvrZ'; // Q deleted // 庚三和清互补，相当于庚三是B，清是A
-  if (is('庚韻 三等')) return 'QerZ'; // Q deleted
-  if (is('清韻 合口')) return 'vrZ'; // is('重紐A類') ? 'vLZ' : 'QvLZ';
-  if (is('清韻')) return 'erZ'; // is('重紐A類') ? 'eLZ' : 'QeLZ';
-  if (is('耕韻 合口')) return 'naQZ'; // Q deleted
-  if (is('耕韻')) return 'aQZ'; // Q deleted
-  if (is('青韻 合口')) return 'naZ';
-  if (is('青韻')) return 'aZ';
+  if (is('庚韻 二等 合口')) return 'frQZ'; // waeng
+  if (is('庚韻 二等')) return 'rQZ'; // aeng
+  if (is('庚韻 三等 合口')) return 'fQerZ'; // uaeng // 庚三和清互补，相当于庚三是B，清是A
+  if (is('庚韻 三等')) return 'QerZ'; // yaeng
+  if (is('清韻 合口')) return 'ferZ'; // wiaeng // is('重紐A類') ? 'vLZ' : 'QvLZ';
+  if (is('清韻')) return 'erZ'; // iaeng // is('重紐A類') ? 'eLZ' : 'QeLZ';
+  if (is('耕韻 合口')) return 'faQZ'; // weeng
+  if (is('耕韻')) return 'aQZ'; // eeng
+  if (is('青韻 合口')) return 'faZ'; // weng
+  if (is('青韻')) return 'aZ'; // eng
   // 曾攝 i Z dsëň
-  if (is('蒸韻 合口')) return 'QvZ'; // Q deleted
-  if (is('蒸韻')) return is('重紐B類') ? 'QeZ' : 'eZ';  // TODO: 按声母分 // Q deleted
-  if (is('登韻 合口')) return 'niZ';
-  if (is('登韻')) return 'iZ';
+  if (is('蒸韻 合口')) return 'fQeZ'; // uing （只有职 uik）
+  if (is('蒸韻')) return is('重紐B類') ? 'QewZ' : 'wZ';  // ying/yng
+  if (is('登韻 合口')) return 'fiZ'; // weong
+  if (is('登韻')) return 'iZ'; // eong
   // 流攝 en lïu
-  if (is('尤韻')) return 'yn'; // 沿袭切韵通俗拟音，写成 yu 而不是 yf。但本方案不会有 yu yf 的对立
-  if (is('侯韻')) return 'n';
-  if (is('幽韻')) return  is('重紐B類') ? 'Qef' : 'ef'; // Q deleted
+  if (is('尤韻')) return 'n'; // u // 沿袭切韵通俗拟音，写成 yu 而不是 yf。但本方案不会有 yu yf 的对立
+  if (is('侯韻')) return 'Pn'; // ou
+  if (is('幽韻')) return  is('重紐B類') ? 'Qen' : 'en'; // yiw/iw
   // 深攝 eV çim
-  if (is('侵韻')) return is('重紐B類') ? 'QeV' : 'eV'; // Q deleted
+  if (is('侵韻')) return is('重紐B類') ? 'QeV' : 'eV'; // yim/im
   // 咸攝 rV xħřem
-  if (is('談韻')) return 'rV';
-  if (is('銜韻')) return 'rQV'; // Q deleted
-  if (is('鹽韻')) return is('重紐B類') ? 'QeaV' : 'eaV'; // Q deleted
-  if (is('添韻')) return 'aV';
-  if (is('咸韻')) return 'aQV'; // Q deleted
-  if (is('覃韻')) return 'iV';
-  if (is('嚴韻')) return 'eiV';
-  if (is('凡韻')) return 'voV';
+  if (is('談韻')) return 'rV'; // am ; rpV
+  if (is('銜韻')) return 'rQV'; // aem
+  if (is('鹽韻')) return is('重紐B類') ? 'QeaV' : 'eaV'; // yem/iem
+  if (is('添韻')) return 'aV'; // em
+  if (is('咸韻')) return 'aQV'; // eem
+  if (is('覃韻')) return 'oV'; // om
+  if (is('嚴韻')) return 'wiV'; // yom
+  if (is('凡韻')) return 'niV'; // uom
   throw new Error('無韻母規則');
 }
 
@@ -296,7 +299,7 @@ let result =  聲母 + 韻母 + 聲調;
 
 // change tone numbers (2, 3) to tone symbols (acute, grave)
 function add聲調符號(romanizedStr) {
-  const vowels = ['a', 'ɑ', 'ä', 'ɛ', 'å', 'ɔ', 'æ', 'e', 'ë', 'ə', 'o', 'ï', 'ɨ', 'ü', 'y', 'u', 'i']; // 按优先级排序
+  const vowels = ['a', 'ɑ', 'ä', 'ɛ', 'å', 'ɔ', 'æ', 'e', 'ë', 'ə', 'o', 'ï', 'ɨ', 'û', 'ɯ', 'ü', 'y', 'u', 'i']; // 按优先级排序
   const sharpToneMark = "\u0301";  // 锐音符（声调2）。"\u00B4" 不結合。
   const dullToneMark = "\u0300";   // 钝音符（声调3）。"\u0060" 不結合
 
@@ -340,6 +343,7 @@ function 羅馬toIPA風格(roma) {
   roma = roma.replace('ä', 'ɛ');
   roma = roma.replace('ë', 'ə');
   roma = roma.replace('ï', 'ɨ');
+  roma = roma.replace('û', 'ɯ');
   roma = roma.replace('ü', 'y');
   roma = roma.replace('å', 'ɔ');
 
@@ -428,7 +432,7 @@ function get羅馬化(result) {
     ["A", "k"], ["B", "tç"], ["C", "s"], ["D", "d"], ["E", "j"],
     ["F", "v"], ["G", "dš"], ["H", "n"], ["I", "?"], ["J", "tš"],
     ["K", "r"], ["L", "t"], ["M", "j"], ["N", "f"], ["O", "'"],
-    ["P", "?"], ["Q", "ř"], ["R", "?"], ["S", "l"], ["T", "dç"],
+    ["P", "ᵒ"], ["Q", "ř"], ["R", "?"], ["S", "l"], ["T", "dç"],
     ["U", "?"], ["V", "m"], ["W", "š"], ["X", "x"], ["Y", "g"],
     ["Z", "ň"], ["6", "ç"], ["7", "ts"], ["8", "ħ"], ["9", "ds"]
   ]);
