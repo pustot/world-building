@@ -4,67 +4,47 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "謙桥"
+                "name": "北京(中) peok-kyaeng"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [0.1313, 52.1951]
+                "coordinates": [116.383331, 39.916668]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "曀田"
+                "name": "菏泽(中) gha-draek"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-3.1883, 55.9533]
+                "coordinates": [115.480659, 35.233749]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "崘屯"
+                "name": "上海(中) djyangq-heojq"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-0.1276, 51.5072]
+                "coordinates": [121.469170, 31.224361]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "南闞"
+                "name": "香港(中) hyang-koeungq"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-1.4049, 50.9105]
+                "coordinates": [114.177216, 22.302711]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "拔柮"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-2.5879, 51.4545]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "肆遏"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-122.3321, 47.6062]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "星莪"
+                "name": "星莪(星)"
             },
             "geometry": {
                 "type": "Point",
@@ -74,7 +54,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "悉禰"
+                "name": "悉禰(濠)"
             },
             "geometry": {
                 "type": "Point",
@@ -84,7 +64,127 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "裊約"
+                "name": "謙桥(滗-瀴)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [0.1313, 52.1951]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "曀田(滗-骨)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-3.1883, 55.9533]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "崘屯(滗-瀴)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.1276, 51.5072]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "南闞(滗-瀴)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.4049, 50.9105]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "拔柮(滗-瀴)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.5879, 51.4545]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "波忾(葑) pa-hi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [2.349014, 48.864716]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "牌蔺(薱) bee-linh"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [13.404954, 52.520008]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "埯鐵(薾) qamq-thet"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [4.897070, 52.377956]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "沓粦(靄) dop-lin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-6.266155, 53.350140]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "粟勘(瀡) suok-khomh"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [18.063240, 59.334591]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "佑史(岳) uh-sryq"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [10.757933, 59.911491]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "肆遏(尤)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-122.3321, 47.6062]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "裊約(尤)"
             },
             "geometry": {
                 "type": "Point",
@@ -94,7 +194,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "渦珄"
+                "name": "渦珄(尤)"
             },
             "geometry": {
                 "type": "Point",
