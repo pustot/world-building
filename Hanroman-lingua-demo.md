@@ -10,8 +10,8 @@
         - 保留有些不适合此语言词性通用之现状
 - 高级词汇之借用来自中古汉语，使用切韵拼音；对中古汉语及拉丁语以外之来源，使用范围参考现代标准汉语（普通话）
 - 一些改动
-    - 但是 sed；ariva - adriva 達；层stratum-strato；做 ag；造 fac；因 kia；vi 路；viat 旅；vex 煩；
-    - 常用中古漢語： 之 tjy 者 tjiaeq 被 byeh 使 sryq 然 njien 而（以代連句之et） njy 所 sryoq
+    - 但是 sed；ariva - adriv 達；层 stratum （-strato）；做 ag；造 fac；因 kuia；vi 路；viat 旅；veks 煩；
+    - 常用中古漢語： 之 tjy 者 tjiaeq 被 byeh 使 sryq 然 njien 而（以代連句之et） njy 所 sryoq 第 dejh
     - 拉語特有結構助詞擬用口字旁：de 啲（=反 之），por 噅，con 哏（=反 跟x之），-tas 咜（=xx性），（-ist 啫？或者反過來，修飾用的「之。。。者」之者用「啫」？）
     - Gubernio 這樣非專有名詞但是直接「音譯」或者轉寫來的字，亦須首字大寫。小寫者皆會自動轉對應漢字。
         - 不確定係唔係讓音譯詞係句首全大寫。。。或者取消句首大寫
