@@ -13,6 +13,7 @@ han,rom
 很,vald
 但,sed
 因,kuia
+故,do
 與,et
 雖,benkue
 若,si
@@ -37,6 +38,8 @@ han,rom
 往,ad
 再,re
 入,ini
+始,init
+畢,fin
 出,eksi
 諸,mult
 能,pot
@@ -69,6 +72,7 @@ han,rom
 啲,de
 噅,por
 咜,tas
+嘸,sen
 跟,kon
 同,sin
 音,fon
@@ -77,6 +81,7 @@ han,rom
 產,produk
 如,kom
 中,medi
+央,kenter
 上,sur
 下,sub
 散,dis
@@ -102,6 +107,7 @@ han,rom
 劣,mal
 世,mund
 完,perfekt
+知,ski
 學,stud
 授,dok
 閱,leg
@@ -133,6 +139,7 @@ han,rom
 基,bas
 誕,nat
 身,korp
+心,kor
 狗,kan
 貓,kat
 豬,pork
@@ -140,9 +147,11 @@ han,rom
 羊,kapra
 雞,gal
 魚,pisk
-馬,cabal
+馬,kabal
 每,omne
 各,apart
+有,hab
+無,nul
 零,zero
 一,un
 獨,solo
@@ -172,6 +181,7 @@ han,rom
 質,esens
 重,pes
 幸,felik
+享,fru
 首,prim
 致,kaus
 分,divid
@@ -190,7 +200,6 @@ han,rom
 創,kre
 軌,relo
 飛,vola
-畢,fin
 全,tot
 續,dur
 燃,ur
@@ -201,11 +210,15 @@ han,rom
 層,stratum
 新,neo
 老,vet
+列,list
+謝,graki
+請,pet
+問,kuer
 性別,seks
 教育,eduk
 表達,ekspres
 基本,basik
-概念,konsept
+概念,konkept
 影響,influ
 親愛,kar
 信息,information
@@ -225,5 +238,6 @@ han,rom
 看來,sembla
 擁有,posed
 重覆,repet
+靈感,inspir
 博物館,museo
 組成以,konsist
