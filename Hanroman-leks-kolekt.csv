@@ -3,14 +3,15 @@ han,rom
 集,kolekt
 星,stel
 船,nav
-是,est
+港,port
+爲,est
 不,ne
 已,ja
 將,va
 更,magis
 比,kuam
 最,maks
-很,vald
+甚,vald
 但,sed
 因,kuia
 故,do
@@ -23,6 +24,10 @@ han,rom
 何,kuod
 時,temp
 曾,past
+早,prio
+晨,mane
+晚,tard
+夜,nokt
 地,lok
 處,torio
 路,vi
@@ -31,8 +36,8 @@ han,rom
 煩,veks
 漢,han
 羅,rom
-我,ego
-你,tu
+吾,ego
+汝,tu
 其,id
 自,sui
 於,in
@@ -80,6 +85,8 @@ han,rom
 做,ag
 造,fak
 產,produk
+具,instrum
+工,labor
 如,kom
 中,medi
 央,kenter
@@ -103,6 +110,7 @@ han,rom
 日,dia
 月,mes
 年,anio
+仍,adhuk
 飲,bib
 食,ed
 回,retro
@@ -198,6 +206,7 @@ han,rom
 城,urb
 人,hom
 易,fakil
+難,dificil
 簡,simple
 質,esens
 重,pes
@@ -238,10 +247,13 @@ han,rom
 請,pet
 問,kuer
 取,kap
+捕,kapt
 持,ten
 得,obten
 置,pos
 加,add
+香,perfum
+尋,kerk
 性別,seks
 教育,eduk
 表達,ekspres
@@ -268,6 +280,7 @@ han,rom
 重覆,repet
 靈感,inspir
 參加,partkip
+嗚呼,eheu
 行業,industr
 博物館,museo
 組成以,konsist
