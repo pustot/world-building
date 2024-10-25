@@ -101,16 +101,55 @@ function get聲調() {
 
 function tupaToMarkings(tupa) {
   // Step 1: Replace specific substrings
-  tupa = tupa.replace(/ae/g, 'aˤ')
+  tupa = tupa
+    // basic
+    .replace(/ae/g, 'aˤ')
     .replace(/ee/g, 'eˤ')
     .replace(/oeu/g, 'oˤ')
     .replace(/ng/g, 'ŋ')
-    .replace(/ou/g, 'ᵒu');
+    .replace(/ou/g, 'ᵒu')
+    // Consonant: q -> ʔ (when q is at the beginning)
+    .replace(/^q/, 'ʔ')
+    // Consonant: h -> ʰ for aspiration (thus not include h or gh)
+    .replace(/(?<=p|t|k|tr|ts|tsr|tj)h/g, 'ʰ')
+    // Consonant: sr, zr -> circumflex like Esperanto (or use ʂ ʐ ?)
+    ////    Note: currently not doing r -> dor-below like tr->ṭ in Sanskrit IAST
+    ////          mainly because tr is already equally long as ts, tj and tŝ
+    // .replace(/sr/g, 'ŝ')
+    // .replace(/zr/g, 'ẑ')
+    // Consonant: 知澈澄娘 r -> (whether use ʵ , ɻ , or ʈ ɖ ɳ ?)
+    // .replace(/r/g, 'ʵ')
+    .replace(/tr/g, 'ʈ')
+    .replace(/dr/g, 'ɖ')
+    .replace(/nr/g, 'ɳ')
+    .replace(/sr/g, 'ʂ')
+    .replace(/zr/g, 'ʐ')
+    // Consonant: 章昌常书船 j -> (whether use j , ʲ , or ɕ ʑ ȵ ?)
+    .replace(/sj/g, 'ɕ')
+    .replace(/zj/g, 'ʑ')
+    .replace(/nj/g, 'ȵ')
+    .replace(/tj/g, 'tɕ')
+    .replace(/dj/g, 'dʑ')
+    // Consonant: gh -> (ğ or ɣ or ʁ or?)
+    .replace(/gh/g, 'ʁ')
+    // Medial: wi -> ü
+    ////    Note: maybe not doing wi -> y because y is not otherwise used
+    .replace(/wi/g, 'ü')
+    // Medial: y -> ɨ (not sure, whether ɨ or ɿ or ʅ or ɨ̧ or keep using y ?)
+    //      In fact ɨ with acute/grave is in some text envs not clear at all...
+    //      But ɨ is the most IPA-ish one, and ï ɯ̈ etc. also have problems with accents
+    //      But in some cases it can also mean ɻ, not only a vowel, thus hesitating
+    .replace(/y/g, 'ɨ')
+    // Medial: w -> ʷ (when is not followed by h, q or ending)
+    .replace(/w(?![hq]|\b)/g, 'ʷ')
+    // Vowel: eo -> ə
+    .replace(/eo/g, 'ə')
+    ;
 
   // Step 2: Handle tone marks
   const toneMarks = {
-    q: { 'a': 'á', 'e': 'é', 'o': 'ó', 'u': 'ú', 'i': 'í', 'y': 'ý' },
-    h: { 'a': 'à', 'e': 'è', 'o': 'ò', 'u': 'ù', 'i': 'ì', 'y': 'ỳ' }
+    q: { 'a': 'á', 'e': 'é', 'o': 'ó', 'ə': 'ǝ́', 'u': 'ú', 'i': 'í', 'y': 'ý', 'ɨ': 'ɨ́', 'ɿ': 'ɿ́', 'ü': 'ǘ' },
+    h: { 'a': 'à', 'e': 'è', 'o': 'ò', 'ə': 'ǝ̀', 'u': 'ù', 'i': 'ì', 'y': 'ỳ', 'ɨ': 'ɨ̀', 'ɿ': 'ɿ̀', 'ü': 'ǜ' }
   };
 
   // Unicode combining diacritical marks
@@ -121,7 +160,7 @@ function tupaToMarkings(tupa) {
 
   // Helper function to add tone mark
   function addToneMark(str, toneMap, combiningMark) {
-    const priority = ['a', 'e', 'o', 'u', 'i', 'y'];
+    const priority = ['a', 'e', 'o', 'ə', 'u', 'i', 'y', 'ɨ', 'ɿ', 'ü'];
     for (let char of priority) {
       const index = str.lastIndexOf(char);
       if (index !== -1) {
